@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Todo } from "../types/todo";
-import { Project } from "../types/project";
-import { Product } from "../types/product";
-import { User } from "../types/user";
+//import { Project } from "../types/project";
+//import { Product } from "../types/product";
+//import { User } from "../types/user";
 
 const BASE_URL = "http://localhost:8080";
 
@@ -31,20 +31,20 @@ export const deleteTodo = async (id: number | undefined) => {
   await axiosInstance.delete(`todos/${id}`);
 };
 
-export const getProjects = async (page = 1) => {
-  return (await axiosInstance.get<Project[]>(`projects?_page=${page}&_limit=3`))
-    .data;
-};
+// export const getProjects = async (page = 1) => {
+//   return (await axiosInstance.get<Project[]>(`projects?_page=${page}&_limit=3`))
+//     .data;
+// };
 
-export const getProducts = async ({ pageParam }: { pageParam: number }) =>
-  (
-    await axiosInstance.get<Product[]>(
-      `products?_page=${pageParam + 1}&_limit=3`
-    )
-  ).data;
+// export const getProducts = async ({ pageParam }: { pageParam: number }) =>
+//   (
+//     await axiosInstance.get<Product[]>(
+//       `products?_page=${pageParam + 1}&_limit=3`
+//     )
+//   ).data;
 
-export const getProduct = async (id: number) =>
-  (await axiosInstance.get<Product>(`products/${id}`)).data;
+// export const getProduct = async (id: number) =>
+//   (await axiosInstance.get<Product>(`products/${id}`)).data;
 
-export const getUsers = async () =>
-  (await axiosInstance.get<User[]>("users")).data;
+// export const getUsers = async () =>
+//   (await axiosInstance.get<User[]>("users")).data;
