@@ -6,6 +6,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import {
+  getProjects,
   //getProduct,
   //getProducts,
   //getProjects,
@@ -43,24 +44,13 @@ export function useTodos(ids: (number | undefined)[] | undefined) {
 //   });
 // }
 
-// export function useTodos(ids: (number | undefined)[] | undefined) {
-//   return useQueries({
-//     queries: (ids ?? []).map((id) => {
-//       return {
-//         queryKey: ["todo", id],
-//         queryFn: () => getTodo(id!),
-//       };
-//     }),
-//   });
-// }
-
-// export function useProjects(page: number) {
-//   return useQuery({
-//     queryKey: ["projects", page],
-//     queryFn: () => getProjects(page),
-//     placeholderData: keepPreviousData,
-//   });
-// }
+export function useProjects(page: number) {
+  return useQuery({
+    queryKey: ["projects", page],
+    queryFn: () => getProjects(page),
+    placeholderData: keepPreviousData,
+  });
+}
 
 // export function useProducts() {
 //   return useInfiniteQuery({

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Todo } from "../types/todo";
+import { Project } from "../types/project";
 //import { Project } from "../types/project";
 //import { Product } from "../types/product";
 //import { User } from "../types/user";
@@ -31,10 +32,10 @@ export const deleteTodo = async (id: number | undefined) => {
   await axiosInstance.delete(`todos/${id}`);
 };
 
-// export const getProjects = async (page = 1) => {
-//   return (await axiosInstance.get<Project[]>(`projects?_page=${page}&_limit=3`))
-//     .data;
-// };
+export const getProjects = async (page = 1) => {
+  return (await axiosInstance.get<Project[]>(`projects?_page=${page}&_limit=3`))
+    .data;
+};
 
 // export const getProducts = async ({ pageParam }: { pageParam: number }) =>
 //   (
