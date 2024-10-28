@@ -1,6 +1,5 @@
 import { Fragment, useState } from "react";
-import { useProduct, useProducts } from "../services/queries";
-import React from "react";
+import { useProducts, useProduct } from "../services/queries";
 
 export default function Products() {
   const [selectedProductId, setSelectedProductId] = useState<number | null>(

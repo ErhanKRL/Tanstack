@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Todo } from "../types/todo";
 import { Project } from "../types/project";
+import { Product } from "../types/product";
 //import { Project } from "../types/project";
 //import { Product } from "../types/product";
 //import { User } from "../types/user";
@@ -37,15 +38,15 @@ export const getProjects = async (page = 1) => {
     .data;
 };
 
-// export const getProducts = async ({ pageParam }: { pageParam: number }) =>
-//   (
-//     await axiosInstance.get<Product[]>(
-//       `products?_page=${pageParam + 1}&_limit=3`
-//     )
-//   ).data;
+export const getProducts = async ({ pageParam }: { pageParam: number }) =>
+  (
+    await axiosInstance.get<Product[]>(
+      `products?_page=${pageParam + 1}&_limit=3`
+    )
+  ).data;
 
-// export const getProduct = async (id: number) =>
-//   (await axiosInstance.get<Product>(`products/${id}`)).data;
+export const getProduct = async (id: number) =>
+  (await axiosInstance.get<Product>(`products/${id}`)).data;
 
 // export const getUsers = async () =>
 //   (await axiosInstance.get<User[]>("users")).data;
